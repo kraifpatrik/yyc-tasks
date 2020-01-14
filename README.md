@@ -8,7 +8,7 @@
 /// @desc Create event
 repeat (20)
 {
-	var _task = yyc_task_create(sleep_task, 1000);
+    var _task = yyc_task_create(sleep_task, 1000);
     yyc_task_run(_task);
 }
 
