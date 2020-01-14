@@ -1,0 +1,10 @@
+{
+    "name": "kraifpatrik/yyc-tasks",
+    "description": "Multithreaded task system for YYC Overwrite",
+    "license": "MIT",
+    "homepage": "https://github.com/kraifpatrik/yyc-tasks",
+    "yyp": "yyc-tasks.yyp",
+    "require": {
+        "kraifpatrik/yyc-overwrite-gml": "*"
+    }
+}
