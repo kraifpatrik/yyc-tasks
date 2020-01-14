@@ -19,7 +19,7 @@ yyc_tasks_update();
 
 /// @func sleep_task(ms)
 /// @desc Sleeps for given amount of milliseconds and then prints a message.
-/// @param {array} ms
+/// @param {real} ms Number of milliseconds to sleep for.
 var _ms = argument0;
 var _t = current_time;
 while (current_time - _t < _ms) {}
