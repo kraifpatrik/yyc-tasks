@@ -6,24 +6,29 @@
 # Example
 ```gml
 /// @desc Create event
-repeat (20)
-{
-    var _task = yyc_task_create(sleep_task, 1000);
-    yyc_task_run(_task);
-}
+var _groupTask = yyc_group_task_create([
+	yyc_task_create(sleep_task, [1000, "Task 1 done!"]),
+	yyc_task_create(sleep_task, [2000, "Task 2 done!"]),
+	yyc_task_create(sleep_task, [3000, "Task 3 done!"]),
+], sleep_task, [1000, "Group 1 done!"]);
+
+yyc_task_run(_groupTask);
 
 
 /// @desc Step event
 yyc_tasks_update();
 
 
-/// @func sleep_task(ms)
+/// @func sleep_task(arg, task)
 /// @desc Sleeps for given amount of milliseconds and then prints a message.
-/// @param {real} ms Number of milliseconds to sleep for.
-var _ms = argument0;
+/// @param {array} arg An array containing `[ms, message]`.
+/// @param {array} task The task that executed this script.
+var _arg = argument[0];
+var _ms = _arg[0];
+var _message = _arg[1];
 var _t = current_time;
 while (current_time - _t < _ms) {}
-show_debug_message("Task done!");
+show_debug_message(_message);
 ```
 
 # Installation

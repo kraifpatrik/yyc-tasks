@@ -1,7 +1,5 @@
 /// @func yyc_task_run(task)
-/// @desc Enqueues task for execution.
-/// @param {array} task The task to enqueue.
-yyc_mutex_acquire(YYC_TASK_MUTEX);
-ds_queue_enqueue(global.__yycTasks, argument0);
-yyc_mutex_release(YYC_TASK_MUTEX);
-yyc_semaphore_release(YYC_TASK_SEMAPHORE);
+/// @desc Executes task's runner method.
+/// @param {array} task The target task.
+gml_pragma("forceinline");
+script_execute(argument0[YYC_ETask.MethodRun], argument0);

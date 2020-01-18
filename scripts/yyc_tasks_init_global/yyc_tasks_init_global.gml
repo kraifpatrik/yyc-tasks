@@ -4,7 +4,7 @@
 /// game start!
 gml_pragma("global", "yyc_tasks_init_global();");
 
-var _threadCount = yyc_get_cpu_count() - 1;
+var _threadCount = YYC_TASKS_THREAD_COUNT;
 
 yyc_mutex_create(YYC_TASK_MUTEX);
 
